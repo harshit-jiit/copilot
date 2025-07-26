@@ -13,6 +13,7 @@ from accounts.serializers import (
     GymActivityCreateSerializer,
     GymActivityListSerializer,
     GymActivityTypeResponseSerializer,
+    GymActivityTypeDeleteSerializer,
 )
 
 
@@ -150,3 +151,21 @@ class GymActivityListAPIView(generics.ListAPIView):
             'count': queryset.count(),
             'data': serializer.data
         })
+
+
+@extend_schema(
+    request=GymActivityTypeDeleteSerializer,
+    responses={204: None},
+    description="Delete gym activity types by IDs. Corresponding activities will have their activity_type field set to null."
+)
+class GymActivityTypeDeleteAPIView(APIView):
+    permission_classes = [IsAuthenticatedViaLoginSession, IsGymOwnerOrStaff, IsCheckUserActive]
+
+    @transaction.atomic
+    def delete(self, request):
+        serializer = GymActivityTypeDeleteSerializer(data=request.data)
+        if serializer.is_valid():
+            ids = serializer.validated_data['activity_type_ids']
+            GymActivityType.objects.filter(id__in=ids).delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

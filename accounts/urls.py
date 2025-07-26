@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ActiveGymMembersView, AddGymMemberView, GymPackageCreateAPIView, GymPackageListAPIView, LoginView, LogoutView,CustomTokenRefreshView, AddGymTrainerView, ActiveGymTrainersView, GymActivityCreateAPIView, GymActivityListAPIView, GymActivityTypeCreateAPIView, GymActivityTypeListAPIView, CheckAuthenticatedView, PaymentCreateAPIView, PaymentUpdateAPIView, PaymentDeleteAPIView, PaymentListAPIView,DashboardAPIView
+from .views import ActiveGymMembersView, AddGymMemberView, GymPackageCreateAPIView, GymPackageListAPIView, LoginView, LogoutView,CustomTokenRefreshView, AddGymTrainerView, ActiveGymTrainersView, GymActivityCreateAPIView, GymActivityListAPIView, GymActivityTypeCreateAPIView, GymActivityTypeListAPIView, GymActivityTypeDeleteAPIView, CheckAuthenticatedView, PaymentCreateAPIView, PaymentUpdateAPIView, PaymentDeleteAPIView, PaymentListAPIView,DashboardAPIView
  
 urlpatterns = [
     path('login/', LoginView.as_view()),
@@ -34,6 +34,7 @@ urlpatterns = [
 
     # View list of all gym activity types
     path('gym/activity/types/', GymActivityTypeListAPIView.as_view(), name='gym_activity_type_list'),
+    path('gym/activity/type/delete/', GymActivityTypeDeleteAPIView.as_view(), name='delete_gym_activity_type'),
 
     path('gym/check-authenticated/', CheckAuthenticatedView.as_view(), name='check_authenticated'),
 
