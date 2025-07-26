@@ -91,7 +91,7 @@ class GymActivityType(models.Model):
 
 class GymActivity(models.Model):
     activity_name = models.CharField(max_length=100, help_text="Name of the activity", blank=False, null=False, unique=True)
-    activity_type = models.ForeignKey(GymActivityType, on_delete=models.CASCADE, related_name='activities')
+    activity_type = models.ForeignKey(GymActivityType, on_delete=models.SET_NULL, null=True, blank=True, related_name='activities')
     activity_description = models.TextField(blank=True, null=True)
     repr =models.JSONField(
         help_text="Representation of the activity, can be used for frontend display",
