@@ -41,6 +41,21 @@ class GymActivityTypeResponseSerializer(serializers.ModelSerializer):
         fields = ['id', 'type_name', 'type_description', 'is_active', 'created_on', 'updated_on']
         read_only_fields = ['id', 'created_on', 'updated_on']
 
+
+class GymActivityTypeDeleteSerializer(serializers.Serializer):
+    """Serializer used for deleting multiple activity types by ID"""
+    activity_type_ids = serializers.ListField(
+        child=serializers.IntegerField(),
+        allow_empty=False
+    )
+
+    def validate_activity_type_ids(self, value):
+        existing_ids = set(GymActivityType.objects.filter(id__in=value).values_list('id', flat=True))
+        missing_ids = [at_id for at_id in value if at_id not in existing_ids]
+        if missing_ids:
+            raise serializers.ValidationError(f"Activity type ids not found: {missing_ids}")
+        return value
+
 class GymActivityAssignedTrainerSerializer(serializers.ModelSerializer):
     """Serializer for GymActivityAssignedTrainer model"""
     class Meta:
