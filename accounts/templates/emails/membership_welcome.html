@@ -1,0 +1,25 @@
+<!-- templates/emails/membership_welcome.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome to {{ gym_name }}</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height:1.6; color: #333;">
+  <h2>Welcome to {{ gym_name }}!</h2>
+  <p>Hello,</p>
+  <p>Your gym membership account has been created successfully. Here are your details:</p>
+  <ul>
+    <li><strong>Username (Email):</strong> {{ email }}</li>
+    <li><strong>Temporary Password:</strong> {{ password }}</li>
+    <li><strong>Membership Package:</strong> {{ package_name }}</li>
+    <li><strong>Package Duration:</strong> {{ package_duration }} days</li>
+    <li><strong>Gym Location:</strong> {{ gym_location }}</li>
+  </ul>
+  <p>Please log in using these credentials and change your password immediately for security.</p>
+  <p>If you have any questions, feel free to contact us.</p>
+  <br />
+  <p>Best regards,<br />{{ gym_name }} Team</p>
+</body>
+</html>

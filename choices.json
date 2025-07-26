@@ -1,0 +1,65 @@
+
+{
+  "roles": [
+    { "value": "gym_owner", "label": "Gym Owner" },
+    { "value": "gym_user", "label": "Gym User" },
+    { "value": "admin", "label": "Admin" },
+    { "value": "super_admin", "label": "Super Admin" },
+    { "value": "gym_trainer", "label": "Gym Trainer" },
+    { "value": "gym_staff", "label": "Gym Staff" }
+  ],
+  "genders": [
+    { "value": "male", "label": "Male" },
+    { "value": "female", "label": "Female" },
+    { "value": "other", "label": "Other" }
+  ],
+  "blood_groups": [
+    { "value": "A+", "label": "A+" },
+    { "value": "A-", "label": "A-" },
+    { "value": "B+", "label": "B+" },
+    { "value": "B-", "label": "B-" },
+    { "value": "AB+", "label": "AB+" },
+    { "value": "AB-", "label": "AB-" },
+    { "value": "O+", "label": "O+" },
+    { "value": "O-", "label": "O-" }
+  ],
+  "goals": [
+    { "value": "fitness", "label": "Fitness" },
+    { "value": "weight_loss", "label": "Weight Loss" },
+    { "value": "muscle_gain", "label": "Muscle Gain" },
+    { "value": "competition", "label": "Competition" }
+  ],
+  "batches": [
+    { "value": "morning", "label": "Morning" },
+    { "value": "afternoon", "label": "Afternoon" },
+    { "value": "evening", "label": "Evening" },
+    { "value": "night", "label": "Night" },
+    { "value": "flexible", "label": "Flexible" }
+  ],
+  "specializations": [
+    { "value": "cardio", "label": "Cardio" },
+    { "value": "strength", "label": "Strength" },
+    { "value": "flexibility", "label": "Flexibility" },
+    { "value": "nutrition", "label": "Nutrition" },
+    { "value": "weightlifting", "label": "Weightlifting" },
+    { "value": "stretching", "label": "Stretching" }
+  ],
+  "activity_intensity_levels": [
+    { "value": "high", "label": "High" },
+    { "value": "medium", "label": "Medium" },
+    { "value": "low", "label": "Low" }
+  ],
+  "activity_days": [
+    { "value": "monday", "label": "Monday" },
+    { "value": "tuesday", "label": "Tuesday" },
+    { "value": "wednesday", "label": "Wednesday" },
+    { "value": "thursday", "label": "Thursday" },
+    { "value": "friday", "label": "Friday" },
+    { "value": "saturday", "label": "Saturday" },
+    { "value": "sunday", "label": "Sunday" }
+  ],
+  "membership_status": [
+    { "value": "active", "label": "Active" },
+    { "value": "inactive", "label": "Inactive" }
+  ]
+}
